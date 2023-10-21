@@ -26,11 +26,11 @@ const AgentsActionCreators = {
                         imageUrl: agent.bustPortrait,
                         backgroundUrl: agent.background,
                         role: {
-                            iconUrl: agent.role.displayIcon,
-                            title: agent.role.displayName,
-                            description: agent.role.description
+                            iconUrl: agent.role?.displayIcon,
+                            title: agent.role?.displayName,
+                            description: agent.role?.description
                         },
-                        abilities: agent.abilities.map((ability) => {
+                        abilities: agent.abilities?.map((ability) => {
                             return {
                                 title: ability.displayName,
                                 description: ability.description,
@@ -39,7 +39,7 @@ const AgentsActionCreators = {
                             }
                         }),
                         voice: {
-                            url: agent.voiceLine.mediaList[0].wave
+                            url: agent.voiceLine?.mediaList?.length ? agent.voiceLine?.mediaList[0].wave : undefined
                         },
                     }
                 })

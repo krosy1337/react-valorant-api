@@ -49,9 +49,9 @@ const AgentCard: FC<AgentCardProps> = ({agent}) => {
                         columnGap: 1,
                     }}>
                         <Typography variant="h6" component="span" color="text.primary">
-                            {agent.role.title}
+                            {agent?.role?.title}
                         </Typography>
-                        <Avatar alt={agent.role.title} src={agent.role.iconUrl} sx={{
+                        <Avatar alt={agent?.role?.title} src={agent?.role?.iconUrl} sx={{
                             width: 24,
                             height: 24,
                         }}/>
@@ -67,7 +67,7 @@ const AgentCard: FC<AgentCardProps> = ({agent}) => {
                             fontSize: 16,
                             fontWeight: 700,
                         }}>
-                    <NavLink to={agent.id} style={{
+                    <NavLink to={agent.id || ""} style={{
                         color: "inherit",
                         textDecoration: "inherit",
                     }}>

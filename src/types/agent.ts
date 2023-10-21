@@ -1,54 +1,54 @@
 export interface IAgentRole {
-    title: string
-    iconUrl: string
-    description: string
+    title?: string
+    iconUrl?: string
+    description?: string
 }
 
 export interface IAbility {
-    title: string
-    description: string
-    iconUrl: string
-    slot: string
+    title?: string
+    description?: string
+    iconUrl?: string
+    slot?: string
 }
 
 export interface IAgentVoice {
-    url: string
+    url?: string
 }
 
 export interface rawAgent {
-    uuid: string
-    displayName: string
-    description: string
-    bustPortrait: string
-    background: string
-    role: {
-        uuid: string
-        displayName: string
-        description: string
-        displayIcon: string
+    uuid?: string
+    displayName?: string
+    description?: string
+    bustPortrait?: string
+    background?: string
+    role?: {
+        uuid?: string
+        displayName?: string
+        description?: string
+        displayIcon?: string
     }
-    abilities: {
-        displayName: string
-        description: string
-        displayIcon: string
-        slot: string
+    abilities?: {
+        displayName?: string
+        description?: string
+        displayIcon?: string
+        slot?: string
     }[]
-    voiceLine: {
-        mediaList: [
-            { wave: string }
+    voiceLine?: {
+        mediaList?: [
+            { wave?: string }
         ]
     }
 }
 
 export interface IAgent {
-    id: string
-    name: string
-    description: string
-    imageUrl: string
-    backgroundUrl: string
-    role: IAgentRole
-    abilities: IAbility[]
-    voice: IAgentVoice
+    id?: string
+    name?: string
+    description?: string
+    imageUrl?: string
+    backgroundUrl?: string
+    role?: IAgentRole
+    abilities?: IAbility[]
+    voice?: IAgentVoice
 }
 
 export interface AgentsState {

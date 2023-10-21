@@ -12,14 +12,14 @@ const AgentsPage: FC = () => {
     const [roleFilter, setRoleFilter] = useState<string>("")
 
     const filteredAgents = useMemo(() => {
-        const fAgents = agents.filter((agent) => agent.name.toLowerCase().includes(nameFilter.toLowerCase().trim()))
-        return roleFilter ? fAgents.filter((agent) => agent.role.title === roleFilter) : fAgents
+        const fAgents = agents.filter((agent) => agent?.name?.toLowerCase().includes(nameFilter.toLowerCase().trim()))
+        return roleFilter ? fAgents.filter((agent) => agent?.role?.title === roleFilter) : fAgents
     }, [nameFilter, agents, roleFilter])
 
     const roles = useMemo(() => {
         const allRoles: string[] = []
         agents.forEach((agent) => {
-            if (!allRoles.includes(agent.role.title)) {
+            if (agent?.role?.title !== undefined && !allRoles.includes(agent.role.title)) {
                 allRoles.push(agent.role.title)
             }
         })

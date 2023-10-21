@@ -19,7 +19,7 @@ const AgentActionCreators = {
                     description: rawAgent.description,
                     imageUrl: rawAgent.bustPortrait,
                     backgroundUrl: rawAgent.background,
-                    abilities: rawAgent.abilities.map((ability) => {
+                    abilities: rawAgent.abilities?.map((ability) => {
                         return {
                             title: ability.displayName,
                             description: ability.description,
@@ -28,12 +28,12 @@ const AgentActionCreators = {
                         }
                     }),
                     voice: {
-                        url: rawAgent.voiceLine.mediaList[0].wave
+                        url: rawAgent.voiceLine?.mediaList?.length ? rawAgent.voiceLine?.mediaList[0].wave : undefined
                     },
                     role: {
-                        iconUrl: rawAgent.role.displayIcon,
-                        title: rawAgent.role.displayName,
-                        description: rawAgent.role.description
+                        iconUrl: rawAgent.role?.displayIcon,
+                        title: rawAgent.role?.displayName,
+                        description: rawAgent.role?.description
                     }
                 }
                 dispatch({type: AgentsActionTypes.FETCH_AGENT_BY_ID_COMPLETE, payload: agent})

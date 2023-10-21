@@ -61,7 +61,7 @@ const AgentPage: FC = () => {
                                     backgroundColor: "background.paper",
                                     backgroundPosition: "0 50%",
                                 }}/>
-                                <AgentVoice url={agent.voice.url}/>
+                                {agent.voice?.url && <AgentVoice url={agent.voice?.url}/>}
                             </Stack>
                         </Grid>
                         <Grid item md={7} xs={12}>
@@ -71,17 +71,17 @@ const AgentPage: FC = () => {
                                 <Stack direction="row" flexWrap="wrap" columnGap={1}>
                                     <Typography variant="h4" color={common.white}>Роль:</Typography>
                                     <Stack direction="row" columnGap={1} alignItems="center">
-                                        <Typography variant="h4" color={common.white}>{agent.role.title}</Typography>
-                                        <Avatar src={agent.role.iconUrl} alt={agent.role.title} sx={{
+                                        <Typography variant="h4" color={common.white}>{agent.role?.title}</Typography>
+                                        <Avatar src={agent.role?.iconUrl} alt={agent.role?.title} sx={{
                                             width: 28,
                                             height: 28,
                                         }}/>
                                     </Stack>
                                 </Stack>
-                                <Typography variant="body1" color={common.white}>{agent.role.description}</Typography>
+                                <Typography variant="body1" color={common.white}>{agent.role?.description}</Typography>
                                 <Box sx={{marginTop: 2}}>
                                     <Tabs value={value} onChange={changeHandler} variant="scrollable">
-                                        {agent.abilities.map((ability) => {
+                                        {agent.abilities?.map((ability) => {
                                             return (
                                                 <MyTab key={ability.slot} label={ability.title}
                                                        icon={<Avatar src={ability.iconUrl}
@@ -89,7 +89,7 @@ const AgentPage: FC = () => {
                                             )
                                         })}
                                     </Tabs>
-                                    {agent.abilities.map((ability, index) => {
+                                    {agent.abilities?.map((ability, index) => {
                                             return value === index &&
                                                 <Box key={ability.slot}>
                                                     <Typography variant="subtitle1"

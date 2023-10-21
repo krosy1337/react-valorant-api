@@ -4,7 +4,7 @@ import {PauseRounded, PlayArrowRounded, VolumeUpRounded, VolumeDownRounded, Volu
 import {common} from "@mui/material/colors";
 
 interface AgentVoiceProps {
-    url: string
+    url?: string
 }
 
 const AgentVoice: FC<AgentVoiceProps> = ({url}) => {
